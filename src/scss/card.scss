@@ -1,0 +1,184 @@
+// * {
+//   box-sizing: border-box;
+// }
+
+// html {
+//   font-family: sans-serif;
+//   font-weight: 300;
+//   color: hsl(0 0% 15%);
+// }
+
+// h2 {
+//   font-weight: 400;
+//   margin: 2rem 0 0.25rem 0;
+// }
+
+// h1 {
+//   position: fixed;
+//   right: 1rem;
+//   bottom: 1rem;
+//   opacity: 0.5;
+//   margin: 0;
+// }
+
+// p {
+//   margin: 0;
+// }
+
+figure {
+  width: 500px;
+  aspect-ratio: 8 / 5;
+  --bg: hsl(330 80% calc(90% - (var(--hover) * 10%)));
+  --accent: hsl(280 80% 40%);
+  transition: background 0.2s;
+  background:
+    radial-gradient(circle at top left, var(--accent), transparent 75%),
+    var(--bg);
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+figure:after {
+  content: "";
+  position: absolute;
+  width: 20%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  bottom: 0%;
+  left: 10%;
+  background: linear-gradient(-65deg, var(--bg) 50%, var(--accent) 50%);
+  filter: blur(25px);
+  transform:
+    translateX(calc(var(--hover) * 15%))
+    scale(calc(1 + (var(--hover) * 0.2)));
+  transition: transform 0.2s, background 0.2s;
+}
+
+img {
+  position: absolute;
+  left: 20%;
+  top: 15%;
+  width: 40%;
+  transform:
+    translateX(calc(var(--hover) * -15%))
+    scale(calc(1 + (var(--hover) * 0.2)));
+  transition: transform 0.2s;
+}
+
+article {
+  --hover: 0;
+}
+
+article:hover {
+  --hover: 1;
+}
+
+
+
+
+
+
+
+
+// :root {
+//     --card-height: 300px;
+//     --card-width: calc(var(--card-height) / 1.5);
+//   }
+//   * {
+//     box-sizing: border-box;
+//   }
+
+//   .card {
+//     width: var(--card-width);
+//     height: var(--card-height);
+//     position: relative;
+//     display: flex;
+//     justify-content: center;
+//     align-items: flex-end;
+//     padding: 0 36px;
+//     perspective: 2500px;
+//     margin: 0 50px;
+//   }
+  
+//   .cover-image {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//   }
+  
+//   .wrapper {
+//     transition: all 0.5s;
+//     position: absolute;
+//     width: 100%;
+//     z-index: -1;
+//   }
+  
+//   .card:hover .wrapper {
+//     transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+//     box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+//     -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+//     -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+//   }
+  
+//   .wrapper::before,
+//   .wrapper::after {
+//     content: "";
+//     opacity: 0;
+//     width: 100%;
+//     height: 80px;
+//     transition: all 0.5s;
+//     position: absolute;
+//     left: 0;
+//   }
+//   .wrapper::before {
+//     top: 0;
+//     height: 100%;
+//     background-image: linear-gradient(
+//       to top,
+//       transparent 46%,
+//       rgba(12, 13, 19, 0.5) 68%,
+//       rgba(12, 13, 19) 97%
+//     );
+//   }
+//   .wrapper::after {
+//     bottom: 0;
+//     opacity: 1;
+//     background-image: linear-gradient(
+//       to bottom,
+//       transparent 46%,
+//       rgba(12, 13, 19, 0.5) 68%,
+//       rgba(12, 13, 19) 97%
+//     );
+//   }
+  
+//   .card:hover .wrapper::before,
+//   .wrapper::after {
+//     opacity: 1;
+//   }
+  
+//   .card:hover .wrapper::after {
+//     height: 120px;
+//   }
+//   .title {
+//     width: 100%;
+//     transition: transform 0.5s;
+//   }
+//   .card:hover .title {
+//     transform: translate3d(0%, -50px, 100px);
+//   }
+  
+//   .character {
+//     width: 100%;
+//     opacity: 0;
+//     transition: all 0.5s;
+//     position: absolute;
+//     z-index: -1;
+//   }
+  
+//   .card:hover .character {
+//     opacity: 1;
+//     transform: translate3d(0%, -30%, 100px);
+//   }
+  
